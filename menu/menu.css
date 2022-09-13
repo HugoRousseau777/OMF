@@ -1,10 +1,10 @@
    /* Ne pas faire que les tailles en % */
    /* text ellipsis au mauvais endroit */
-   /* Utiliser object fit pour les images */
-   
+   /* Utiliser object fit pour les images + max height + vertical align sur le conteneur de l'image */
+   /* Mettre prix et case dans la même div */
+   /* La taille du prix change avec l'animation car la taille n'est pas définie, contrairement aux intitulés et plats */
    body {
     margin: 0;
-    height: 100%;
 }
 
 ul {
@@ -17,8 +17,8 @@ a {
 }
 
 header {
-height: 37vh;
-border: 1px solid red;
+background-color: white;
+height: fit-content;
 margin: 0;
 display: flex;
 flex-direction: column;
@@ -28,34 +28,41 @@ text-align: center;
 
 header .logo {
 width: 100%;
-padding-top: 2%;
-padding-bottom: 0%;
-margin-bottom: 0;
-box-shadow: 0px 3px grey;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 3%;
+margin-bottom: 1.5%;
+}
+
+header .logo i {
+font-size: 100%;
+display: inline;
+position: absolute;
+left: 1em;
 }
 
 header .logo img {
-width: 25%;
-height: auto;
+max-width: 50%;
+max-height: 50px;
 }
 
 header .imageBG {
-height: 84%;
-width: 100%;
+width: 100%;  
+height: 80%;
 }
 
 header .imageBG img {
-border: 1px solid red;
 width: 100%;
-height: 100%;
-object-fit: fill;
-
+height: auto;
+object-fit:cover;
 }
 
 main {
 padding-top: 10%;
-margin-top: -12%;
-padding-bottom: 15%;
+margin-top: -15%;
+padding-bottom: 12%;
 position: relative;
 bottom: 0px;
 background-color: rgb(237, 236, 236);
@@ -82,8 +89,6 @@ margin-left: 5%;
 }
 
 .contI {
-height: fit-content;
-font-size: 16px;
 margin-right: 7%;
 background-color: rgb(237, 236, 236);/* 2 dernières prop = bug */
 border: 0px;
@@ -92,11 +97,18 @@ border: 0px;
 .restaurantsFlex .contI i {
 margin-top: 70%;
 font-size: 16px;
+
 }
 
-main article {
-height: 765px;
+i {
+transition: all 0.5s ease-in; /*! Ne marche pas juste au dessus !*/
 }
+
+i:hover {
+color: #9356dc;
+font-size: 19px;
+}
+
 
 .entrees {
 display: flex;
@@ -140,18 +152,14 @@ align-items: center;
 }
 
 .entrees .plats, .platsPrincipaux .plats, .desserts .plats { 
-border: 1px solid red;
 position: relative;
 border-radius: 10px;
 width: 90%;
-height: 50px;
+height: 38px;
 margin-bottom: 3.4%;
 background-color: white;
 display: flex;
-flex-direction: column;
-align-items: flex-start;
 justify-content: space-between;
-flex-wrap: wrap;
 overflow: hidden;
 animation: itemAppear 1s;
 animation-timing-function: linear;
@@ -164,68 +172,87 @@ transform: scale(0);
 100% {transform: scale(1);}
 }
 
+.platsText {
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 100%;
+height: 100%;
+padding: 6px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
 .plats p {
-font-size: 15px;
 margin: 0;
 padding: 0;
-margin-left: 3%;
 }
 
 .plats .intitules{
-font-size: 11px;
-font-weight: 600;
-width: 50%;
-margin-bottom: 10px;
-white-space: nowrap;
+overflow: hidden;
 text-overflow: ellipsis;
+font-size: 12px;
+font-weight: 600;
 }
 
 .plats .accompagnements{
-padding-top: 1px;
-width: 50%;
-font-size: 10px;
-color: rgb(91, 89, 89);
-white-space: nowrap;
+overflow: hidden;
 text-overflow: ellipsis;
+font-size: 10px;
+font-weight: 700;
+color: rgb(91, 89, 89);
+}
+
+
+
+.prixIcone {
+display: flex;
+margin-right: -40px;
+transition: all 2s;
 }
 
 .plats .prix{
+width: 20px;
+box-sizing: border-box;
+height: 100%;
 display: flex;
-border: 1px solid red;
 flex-direction: column;
 justify-content: flex-end;
-margin: 0;
-height: 100%;
+padding-bottom: 6px;
+padding-left: 5px;
+margin-right: 5px;
 font-weight: 600;
-margin-right: 0%;
 }
 
 .plats .prix p{
 margin: 0;
 padding: 0;
-font-size: 10px;
-margin-top: 60%;
-margin-left: 60%;
+padding-right: 8px;
+font-size: 9px;
 }
 
 .caseCochee {
-height: 100%;
-width: 10%;
-align-self: flex-end;
-background-color: #99E2D0;
-margin-left: 0px;
-margin-right: -11%;
+width: 40px;
 border-radius: 0 10px 10px 0;
+background-color: green;
 display: flex;
+justify-content: center;
 align-items: center;
-justify-content: center; 
-transition: all 2s ease-in-out;
+}
+.caseCochee .check_icons {
+font-size: 12px;
+transition: all 3s;
 }
 
-.plats:hover :nth-child(4) { /*Case cochée*/
-margin-right: 0px;
+.plats:hover .prixIcone { 
+margin-right: 0;
 }
 
+.plats:hover .check_icons { 
+transform: rotate(-360deg);
+}
 
 .commander {
 display: block;
@@ -240,52 +267,63 @@ border-radius: 20px;
 font-size: 12px;
 }
 
+.commander:hover {
+cursor: pointer;
+}
+
 footer {
 margin-top: 0;
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-height: 120px;
+height: fit-content;
 color: white;
 background-color: rgb(44, 44, 44);
 }
 
-footer h2,
-footer li {
+footer h2, footer li {
 margin: 0;
 font-size: 12px;
 margin-left: 6%;
 }
+
 footer h2 {
-margin-top: 5%;
-height: 10%;
+margin-top: 1.4em;
+margin-bottom: 1em;
 border: 0;
 }
 
 footer ul {
-margin-top: 4%;
+margin-top: 0;
 padding: 0;
 height: 90%;
 }
 
 footer li {
 font-size: 10px;
-margin-top: 3px;
+margin-top: 0.4em;
+}
+
+#first {
+margin-top: 0;
 }
 
 @media (min-width: 770px) and (max-width: 991px) {
 
-header {
-height: 500px;
-}
+
 
 header .logo {
-padding-top: 4%;
+margin-top: 0;
+padding-top: 3%;
+}
+
+.imageBG img {
+max-height: 500px;
 }
 
 main {
 padding-top: 5%;
-margin-top: -13%;
+margin-top: -10%;
 padding-bottom: 7%;
 }
 
@@ -293,7 +331,7 @@ main header {
 flex-direction: column;
 align-items: center;
 padding: 0;
-margin-bottom: 3%;
+margin-bottom: 0%;
 }
 
 main header h1 {
@@ -303,25 +341,30 @@ margin-bottom: 1%;
 }
 
 .contI {
-font-size: 35px;
+height: 70px;
+font-size: 30px;
 margin: 0;
 color: #ff79da;
+
 }
 
-.contI:hover {
-color: #9356dc;
-scale: 1.6;
-} 
+
+i:hover {
+
+font-size: 45px;
+}
 
 /*Menu*/
 
 main article {
+margin-top: 0;
 height: fit-content;
 }
 
 .entrees, .platsPrincipaux, .desserts {
 margin-bottom: 4%;
 }
+
 
 h2 {
 width: fit-content;
@@ -338,10 +381,51 @@ justify-content: space-evenly;
 
 .entrees .plats, .platsPrincipaux .plats, .desserts .plats { 
 width: 24%;
-height: 80px;
+height: 100px;
 margin-bottom: 0%;
+flex-direction: column;
+}
+
+
+.platsText {
+flex-direction: column;
+justify-content: flex-start;
+width: 100%;
+min-height: 30%;
+max-height: 31%;
+margin-top: 1rem;
+padding: 2px;
+text-align: center;
+white-space: normal;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.prixIcone {
+flex-direction: column;
+width: 100%;
+height: auto;
+margin-bottom: -40px;
+transition: all 2s;
+}
+
+.plats .prix p {
+font-size: 10px;  
+}
+
+.caseCochee {
+width: 100%;
+height: 40px;
+background-color: green;
+display: flex;
+justify-content: center;
 align-items: center;
-justify-content: space-evenly;
+}
+.caseCochee .check_icons {
+font-size: 20px;
+}
+.plats:hover .prixIcone { 
+margin-bottom: 0;
 }
 
 .plats .intitules{
@@ -359,6 +443,7 @@ width: fit-content;
 height: fit-content;
 margin-left: auto;
 margin-right: auto;
+margin-bottom: 1%;
 padding: 0;
 }
 
@@ -395,31 +480,39 @@ border-radius: 15px;
 font-size: 14px;
 margin: 0;
 }
+
 footer li a {
 color: black;
 }
-
   }
 
 @media (min-width: 992px) {
 
-header {
-height: 500px;
-}
-
 header .logo {
-padding-top: 4%;
+
+margin-top: 0;
+padding-top: 2%;
+padding-bottom: 1.5%;
+height: auto;
+background-color: white;
+z-index: 100;
 box-shadow: 0 0 black;
 }
+
 header .imageBG {
-width: 40%;
-height: 200px;
+margin-top: -12%;
+width: 50%;
+max-height: 1200px;
+}
+
+header .imageBG img {
+width: 100%;
 }
 
 main {
 padding-top: 2%;
-margin-top: -13%;
-padding-bottom: 5%;
+margin-top: -5%;
+padding-bottom: 6%;
 }
  
 main header {
@@ -438,15 +531,15 @@ margin-bottom: 1%;
 }
  
 .contI {
+height: 70px;
 font-size: 35px;
 margin: 0;
 color: #ff79da;
 }
 
-.contI:hover {
-color: #9356dc;
-scale: 1.6;
-} 
+i:hover {
+font-size: 50px;
+}
 
 /*Menu*/
 
@@ -474,35 +567,65 @@ justify-content: space-evenly;
 .entrees .plats, .platsPrincipaux .plats, .desserts .plats { 
 border-radius: 10px;
 width: 24%;
-height: 80px;
+height: 120px;
 margin-bottom: 0%;
-align-items: center;
-justify-content: space-evenly;
+flex-direction: column;
 
 }
 
-.plats .intitules{
-font-size: 15px;
-font-weight: 600;
-margin-top: 1%;
-
+.platsText {
+height: fit-content;
+flex-direction: column;
+justify-content: flex-start;
+width: 100%;
+margin-top: 0.5rem;
+padding: 2px;
+text-align: center;
+white-space: normal;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 
-.plats .accompagnements{
-font-size: 13px;
-margin: 0;
+.prixIcone {
+flex-direction: column;
+width: 100%;
+max-height: 140px;
+margin-bottom: -62px;
+transition: all 2s;
 }
 
 .plats .prix{
+
+display: block;
 width: fit-content;
 height: fit-content;
 margin-left: auto;
 margin-right: auto;
 padding: 0;
+margin-bottom: 5px;
+
 }
 
-.plats .prix p{
-font-size: 12px;
+.plats .prix p {
+padding: 0;
+font-size: 12px;  
+text-align: center;
+}
+
+.caseCochee {
+width: 100%;
+height: 60px;
+background-color: green;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.caseCochee .check_icons {
+font-size: 24px;
+}
+
+.plats:hover :nth-child(2) {
+margin-bottom: 0;
 }
 
 .commander {
