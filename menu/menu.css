@@ -4,26 +4,27 @@
    /* Mettre prix et case dans la même div */
    /* La taille du prix change avec l'animation car la taille n'est pas définie, contrairement aux intitulés et plats */
    body {
-    margin: 0;
-}
+    font-family: 'Roboto', sans-serif;
+     margin: 0;
+ }
 
-ul {
-    list-style: none;
-}
+ ul {
+     list-style: none;
+ }
 
-a {
-    color: white;
-    text-decoration: none;
-}
+ a {
+     color: white;
+     text-decoration: none;
+ }
 
 header {
-background-color: white;
-height: fit-content;
-margin: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
+ background-color: white;
+ height: fit-content;
+ margin: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
 }
 
 header .logo {
@@ -60,9 +61,9 @@ object-fit:cover;
 }
 
 main {
-padding-top: 10%;
+padding-top: 2em;
 margin-top: -15%;
-padding-bottom: 12%;
+padding-bottom: 4em;
 position: relative;
 bottom: 0px;
 background-color: rgb(237, 236, 236);
@@ -82,6 +83,7 @@ height: 4%;
 }
 
 main header h1 {
+font-family: 'Shrikhand', cursive;
 margin: 0;
 padding: 0;
 font-size: 18px;
@@ -95,9 +97,8 @@ border: 0px;
 }
 
 .restaurantsFlex .contI i {
-margin-top: 70%;
-font-size: 16px;
-
+ margin-top: 70%;
+ font-size: 20px;
 }
 
 i {
@@ -109,38 +110,26 @@ color: #9356dc;
 font-size: 19px;
 }
 
-
 .entrees {
 display: flex;
 flex-direction: column;
 }
 
 .entrees, .platsPrincipaux, .desserts {
-margin-bottom: 6%;
-}
-/* Animation-delay ne marche pas */
-.pUn {
-animation: plats 1s linear 0s 1 normal both;
-}
-.pDeux {
-animation: plats 1s linear 0.5s 1 normal both;
-}
-.pTrois {
-animation: plats 1s linear 1s 1 normal both;
-}
-.pQuatre {
-animation: plats 1s linear 1.5s 1 normal both;
+ 
+ margin-bottom: 1em;
 }
 
-@keyframes plats {
-0% { opacity: 0; }
-100% {opacity: 1;}
+.desserts {
+margin-bottom: 0;
 }
 
 h2 {
+font-weight: 200;
 margin-left: 5%;
 width: 30px;
-font-size: 14px;
+font-size: 11px;
+color: rgb(63, 63, 63);
 height: fit-content;
 border-bottom: 2px solid green;
 }
@@ -155,8 +144,10 @@ align-items: center;
 position: relative;
 border-radius: 10px;
 width: 90%;
-height: 38px;
-margin-bottom: 3.4%;
+height: 40px;
+padding-top: 0.1em;
+padding-bottom: 0.1em;
+margin-bottom: 0.6em;
 background-color: white;
 display: flex;
 justify-content: space-between;
@@ -167,9 +158,20 @@ animation-fill-mode: both;
 transform: scale(0);
 }
 
+.platsPrincipaux .plats {
+animation-delay: 1s;
+}
+.desserts .plats {
+animation-delay: 2s;
+}
+
 @keyframes itemAppear { 
 0% {transform: scale(0);}
 100% {transform: scale(1);}
+}
+
+#platFinal {
+margin-bottom: 0;
 }
 
 .platsText {
@@ -185,7 +187,7 @@ overflow: hidden;
 text-overflow: ellipsis;
 }
 
-.plats p {
+.plats h3, .plats h4 {
 margin: 0;
 padding: 0;
 }
@@ -193,7 +195,7 @@ padding: 0;
 .plats .intitules{
 overflow: hidden;
 text-overflow: ellipsis;
-font-size: 12px;
+font-size: 11px;
 font-weight: 600;
 }
 
@@ -201,11 +203,9 @@ font-weight: 600;
 overflow: hidden;
 text-overflow: ellipsis;
 font-size: 10px;
-font-weight: 700;
+font-weight: 300;
 color: rgb(91, 89, 89);
 }
-
-
 
 .prixIcone {
 display: flex;
@@ -257,12 +257,13 @@ transform: rotate(-360deg);
 .commander {
 display: block;
 margin: auto;
+margin-top: 3em;
 height: 32px;
 background: linear-gradient(#ff79da, #9356dc);
 color: white;
 border: 0;
 font-size: 13px;
-padding: 6px 12% 8px;
+padding: 1em 3em 2.2em;
 border-radius: 20px;
 font-size: 12px;
 }
@@ -281,27 +282,33 @@ color: white;
 background-color: rgb(44, 44, 44);
 }
 
+footer h2 {
+color: white;
+font-weight: 100;
+font-family: 'Shrikhand', cursive;
+}
+
 footer h2, footer li {
-margin: 0;
-font-size: 12px;
-margin-left: 6%;
+ margin: 0;
+ font-size: 12px;
+ margin-left: 6%;
 }
 
 footer h2 {
-margin-top: 1.4em;
-margin-bottom: 1em;
-border: 0;
+ margin-top: 1.4em;
+ margin-bottom: 1em;
+ border: 0;
 }
 
 footer ul {
-margin-top: 0;
-padding: 0;
-height: 90%;
+ margin-top: 0;
+ padding: 0;
+ height: 90%;
 }
 
 footer li {
-font-size: 10px;
-margin-top: 0.4em;
+ font-size: 10px;
+ margin-top: 0.4em;
 }
 
 #first {
@@ -322,68 +329,67 @@ max-height: 500px;
 }
 
 main {
-padding-top: 5%;
+padding-top: 3em;
 margin-top: -10%;
-padding-bottom: 7%;
+padding-bottom: 4em;
 }
 
 main header {
-flex-direction: column;
-align-items: center;
-padding: 0;
-margin-bottom: 0%;
+ flex-direction: column;
+ align-items: center;
+ padding: 0;
+ margin-bottom: 0%;
 }
 
 main header h1 {
-font-size: 26px;
-margin-left: 0%;
-margin-bottom: 1%;
+ font-size: 26px;
+ margin-left: 0%;
+ margin-bottom: 0em;
 }
 
 .contI {
-height: 70px;
-font-size: 30px;
-margin: 0;
-color: #ff79da;
-
+ height: 70px;
+ font-size: 30px;
+ margin: 0;
+ color: #ff79da;
 }
 
 
 i:hover {
-
-font-size: 45px;
+ font-size: 45px;
 }
 
 /*Menu*/
 
 main article {
 margin-top: 0;
-height: fit-content;
+ height: fit-content;
 }
 
 .entrees, .platsPrincipaux, .desserts {
-margin-bottom: 4%;
+ margin-bottom: 3.2em;
 }
 
 
 h2 {
-width: fit-content;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 2%;
-font-size: 20px;
+ width: fit-content;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 1.4em;
+ font-size: 20px;
 }
 
 .entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
-flex-direction: row;
-justify-content: space-evenly;
+ flex-direction: row;
+ justify-content: space-evenly;
 }
 
 .entrees .plats, .platsPrincipaux .plats, .desserts .plats { 
-width: 24%;
-height: 100px;
-margin-bottom: 0%;
-flex-direction: column;
+ width: 24%;
+ max-width: 200px;
+ height: 100px;
+ margin-bottom: 0%;
+ flex-direction: column;
 }
 
 
@@ -405,7 +411,7 @@ text-overflow: ellipsis;
 flex-direction: column;
 width: 100%;
 height: auto;
-margin-bottom: -40px;
+margin-bottom: -42px;
 transition: all 2s;
 }
 
@@ -429,13 +435,13 @@ margin-bottom: 0;
 }
 
 .plats .intitules{
-margin: 0;
-padding: 0;
+ margin: 0;
+ padding: 0;
 }
 
 .plats .accompagnements{
-margin: 0;
-padding: 0;
+ margin: 0;
+ padding: 0;
 }
 
 .plats .prix{
@@ -443,48 +449,48 @@ width: fit-content;
 height: fit-content;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 1%;
+margin-bottom: 2%;
 padding: 0;
 }
 
 .commander {
-margin-top: 6%;
-height: 40px;
-font-size: 16px;
+ margin-top: 0em;
+ height: 40px;
+ font-size: 16px;
 }
 
 /* Footer */
 
 footer {
-height: fit-content;
-padding-bottom: 4%;
+ height: fit-content;
+ padding-top: 2em;
+ padding-bottom: 2em;
 }
 
 footer h2 {
-margin: 2% auto 0;
-font-size: 24px;
+ margin: 0% auto 0;
+ font-size: 24px;
 }
 
 footer ul {
-display: flex;
-width: 100%;
-margin-top: 4%;
-justify-content: space-evenly;
+ display: flex;
+ width: 100%;
+ margin-top: 1.6em;
+ justify-content: space-evenly;
 }
 
 footer li {
-height: fit-content;
-padding: 2%;
-background-color: white;
-border-radius: 15px;
-font-size: 14px;
-margin: 0;
+ padding: 1.3em;
+ background-color: white;
+ border-radius: 15px;
+ font-size: 14px;
+ margin: 0;
 }
 
 footer li a {
-color: black;
+ color: black;
 }
-  }
+   }
 
 @media (min-width: 992px) {
 
@@ -506,78 +512,76 @@ max-height: 1200px;
 }
 
 header .imageBG img {
-width: 100%;
+ width: 100%;
 }
 
 main {
-padding-top: 2%;
-margin-top: -5%;
-padding-bottom: 6%;
+ padding-top: 2%;
+ margin-top: -5%;
+ padding-bottom: 6%;
 }
- 
+  
 main header {
-flex-direction: column;
-align-items: center;
-padding: 0;
-margin-bottom: 1%;
+ flex-direction: column;
+ align-items: center;
+ padding: 0;
+ margin-bottom: 1%;
 }
- 
+  
 main header h1 {
-margin: 0;
-padding: 0;
-font-size: 22px;
-margin-left: 0%;
-margin-bottom: 1%;
+ margin: 0;
+ padding: 0;
+ font-size: 22px;
+ margin-left: 0%;
+ margin-bottom: 0.5em;
+}
+  
+.contI {
+ font-size: 35px;
+ margin: 0;
+ color: #ff79da;
 }
  
-.contI {
-height: 70px;
-font-size: 35px;
-margin: 0;
-color: #ff79da;
-}
-
 i:hover {
 font-size: 50px;
 }
-
-/*Menu*/
-
+ 
+ /*Menu*/
+ 
 main article {
-height: fit-content;
+ height: fit-content;
 }
-
+ 
 .entrees, .platsPrincipaux, .desserts {
-margin-bottom: 4%;
+ margin-bottom: 3em;
 }
-
+ 
 h2 {
-width: fit-content;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 2%;
-font-size: 18px;
+ width: fit-content;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 1.2em;
+ font-size: 18px;
 }
-  
+   
 .entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
-flex-direction: row;
-justify-content: space-evenly;
+ flex-direction: row;
+ justify-content: space-evenly;
 }
-
+ 
 .entrees .plats, .platsPrincipaux .plats, .desserts .plats { 
-border-radius: 10px;
-width: 24%;
-height: 120px;
-margin-bottom: 0%;
-flex-direction: column;
-
+ border-radius: 10px;
+ width: 24%;
+ max-width: 280px;
+ height: 120px;
+ margin-bottom: 0%;
+ flex-direction: column;
 }
 
 .platsText {
 height: fit-content;
 flex-direction: column;
 justify-content: flex-start;
-width: 100%;
 margin-top: 0.5rem;
 padding: 2px;
 text-align: center;
@@ -595,7 +599,6 @@ transition: all 2s;
 }
 
 .plats .prix{
-
 display: block;
 width: fit-content;
 height: fit-content;
@@ -603,7 +606,6 @@ margin-left: auto;
 margin-right: auto;
 padding: 0;
 margin-bottom: 5px;
-
 }
 
 .plats .prix p {
@@ -615,10 +617,7 @@ text-align: center;
 .caseCochee {
 width: 100%;
 height: 60px;
-background-color: green;
-display: flex;
-justify-content: center;
-align-items: center;
+
 }
 .caseCochee .check_icons {
 font-size: 24px;
@@ -629,36 +628,39 @@ margin-bottom: 0;
 }
 
 .commander {
-margin-top: 6%;
-height: 60px;
-font-size: 16px;
+ margin-top: 2em;
+ height: 60px;
+ font-size: 16px;
 }
-
-/* Footer */
-
-footer { 
-height: fit-content;
-padding-bottom: 4%;
-color: white;
-background-color: rgb(44, 44, 44);
+ 
+ /* Footer */
+ 
+ footer { 
+   padding-top: 2em;
+   padding-bottom: 3em;
+   color: white;
+   background-color: rgb(44, 44, 44);
 }
-
+       
 footer h2 {
-margin: 2% auto 0;
+   margin: 0% auto 0;
+   font-size: 28px;
+}
+     
+footer h2 {
+margin: 0% auto 0;
 font-size: 26px;
 }
-
+ 
 footer ul {
 display: flex;
 width: 100%;
-margin-top: 4%;
-height: 90%;
+margin-top: 1.6em;
 justify-content: space-evenly;
 }
-
+ 
 footer li {
-height: fit-content;
-padding: 2%;
+padding: 1.2em;
 background-color: white;
 border-radius: 15px;
 font-size: 16px;
@@ -669,5 +671,5 @@ footer li a {
 color: black;
 }
 
-}
+ }
 

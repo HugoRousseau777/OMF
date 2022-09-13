@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet"> </head>
 <body>
+    <div class="loader">  
+        <div class="loaderitems">
+            <img src="/img/logo/ohmyfood.png" alt="">  
+        </div>  
+    </div>
     <header>
-
-        <div class="loader">
-            <div class="loaderitems"></div>
-        </div>
- 
         <div class="logo">
             <img src="/img/logo/ohmyfood.png" alt="">
         </div>
@@ -28,71 +30,66 @@
         </div>
     </header>
     <main>
-        <div class="tutoriel">
+        <section class="tutoriel">
             <h2>Fonctionnement</h2>
             <div class="tutorielFlex">
                 <div>
-                    <div class="cercles"> <p>1</p>
-                    </div>
-                    <i class="fa-solid fa-mobile-screen-button"></i> <p>Choisissez un restaurant</p>
+                    <div class="cercles"> <p>1</p> </div>
+                    <i class="fa-solid fa-mobile-screen-button"></i> <h3>Choisissez un restaurant</h3>
                 </div>
                 <div>
                     <div class="cercles"> <p>2</p></div>
-                    <div class="doubleIcones">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>   
-                        <i class="fa-solid fa-bars"></i>
-                    </div> 
-                    <p>Composez votre menu</p>
-                    </div>
+                        <i class="fa-solid fa-list"></i> <h3>Composez votre menu</h3>
+                </div>
                 <div>
                     <div class="cercles"> <p>3</p></div> 
-                    <i class="fa-solid fa-store"></i> <p>Dégustez au restaurant</p>
+                    <i class="fa-solid fa-store"></i> <h3>Dégustez au restaurant</h3>
                 </div>
             </div>
-        </div>
-        <div class="selection">
+        </section>
+        <section class="selection">
             <h2>Restaurants</h2>
             <div class="restaurantsFlex">
-                <div class="resto">
+                <article class="resto">
                     <a href="">
                         <img src="/img/restaurants/restoUn.jpg" alt="">
                         <div class="description">
-                            <p class="restaurants nom">La palette du goût</p>
-                            <p class="restaurants localisation">Ménilmontant</p>
+                            <h3 class="restaurants nom">La palette du goût</h3>
+                            <h4 class="restaurants localisation">Ménilmontant</h4>
                             <button class="contI"><i class="fa-solid fa-heart"></i></button>    
                         </div>
                     </a>
-                </div>
-                <div class="resto">
+                </article>
+                <article class="resto">
                     <a href="">
                         <img src="/img/restaurants/restoDeux.jpg" alt="">
                         <div class="description">
-                            <p class="restaurants nom">La palette du goût</p>
-                            <p class="restaurants localisation">Ménilmontant</p>
+                            <h3 class="restaurants nom">La palette du goût</h3>
+                            <h4 class="restaurants localisation">Ménilmontant</h4>
                             <button class="contI"><i class="fa-solid fa-heart"></i></button>  
                         </div>
                     </a>
-                </div>
-                <div class="resto">
+                </article>  
+                <article class="resto">
                     <a href="">
                         <img src="/img/restaurants/restoTrois.jpg" alt="">
                         <div class="description">
-                            <p class="restaurants nom">La palette du goût</p>
-                            <p class="restaurants localisation">Ménilmontant</p>
+                            <h3 class="restaurants nom">La palette du goût</h3>
+                            <h4 class="restaurants localisation">Ménilmontant</h4>
                             <button class="contI"><i class="fa-solid fa-heart"></i></button>    
                         </div>
                     </a>
-                </div>
-                <div class="resto">
+                </article>
+                <article class="resto" id="restoQuatre">
                     <a href="">
                         <img src="/img/restaurants/restoQuatre.jpg" alt="">
                         <div class="description">
-                            <p class="restaurants nom">La palette du goût</p>
-                            <p class="restaurants localisation">Ménilmontant</p>
+                            <h3 class="restaurants nom">La palette du goût</h3>
+                            <h4 class="restaurants localisation">Ménilmontant</h4>
                             <button class="contI"><i class="fa-solid fa-heart"></i></button>  
                         </div>
                     </a>
-                </div>
+                </article>
             </div>
         </div>
     </main>
@@ -100,8 +97,8 @@
     <footer>
         <h2>ohmyfood</h2>
         <ul>
-            <li><a href="">Proposer un restaurant</a></li>
-            <li><a href="">Devenir partenaire</a></li>
+            <li><i class="fa-solid fa-utensils" id="liAdjust"></i><a href="">Proposer un restaurant</a></li>
+            <li><i class="fa-solid fa-handshake-angle"></i><a href="">Devenir partenaire</a></li>
             <li><a href="">Mentions légales</a></li>
             <li><a href="">Contact</a></li>
         </ul>
