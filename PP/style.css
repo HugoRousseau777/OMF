@@ -34,16 +34,16 @@ a {
   animation: animationAccueilVide 3s ease-in 0s 1 normal none;
 }
 
-/*Ajout*/
+
 .loader {
 
-  position: fixed; /* Permet au p de se superposer plutôt que s'afficher en dessous */
+  position: fixed;
   animation: backAnim 3.7s ease-out 0s 1 normal none;
   width: 100vw;
   height: 100vh;
   z-index: -10000;
 }
-
+/*
 @keyframes backAnim {
     0% {
       z-index: 100000;
@@ -62,9 +62,8 @@ a {
       background-color: white;
       opacity: 0;}
 }
-
+*/
 .loaderitems {
-
   opacity: 0;
   background-color: tomato;
   border: 10vh solid black;
@@ -80,7 +79,7 @@ a {
   height: 100%;
   width: 100%;
 }
-
+/*
 @keyframes spin {
   0% {background-color: #99E2D0;
       border: 2vh solid #9356dc;
@@ -99,7 +98,7 @@ a {
     opacity: 0;
     transform: scale(2);}
 }
-
+*/
 header {
   background-color: white;
   margin-top: 0;
@@ -111,14 +110,16 @@ header {
 }
 header .logo {
   width: 100%;
-  font-size: 18px;
-  padding-top: 0.6em;
-  padding-bottom: 0%;
+  padding-top: 1em;
+  padding-bottom: 0.2em;
   box-shadow: 0px 3px grey;
 }
 header .logo img {
-  width: 40%;
-  max-width: 140px;
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+  max-height: 40px;
+  object-fit: contain;
 }
 
 header .localisation {
@@ -447,6 +448,12 @@ a {
   text-decoration: unset;
 }
   
+header .logo img {
+  width: 33%;
+  max-width: 450px;
+  max-height: 85px;
+}
+
 header .localisation {
 font-size: 16px;
 }
@@ -614,6 +621,12 @@ margin-right: 0.6em;
       margin-bottom: 1%;
    }
       
+  header .logo img {
+    width: 33%;
+    max-width: 350px;
+    max-height: 70px;
+  }
+
   header .localisation {
       font-size: 16px;
    }
