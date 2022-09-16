@@ -22,12 +22,15 @@ a {
   text-decoration: unset;
 }
 
-.loader, .loaderitems, header .localisation {
+.loader, .loaderitems, header .localisation, .cercles {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+header, .headerText, .tutoriel, .tutorielFlex, .tutorielFlex div, .cercles, .selection, .restaurantsFlex, .resto a, .description, .contI, footer{
+  display: flex;
+}
 
 #animationAccueil {
   border: 3px solid black;
@@ -102,11 +105,11 @@ header {
   background-color: white;
   margin-top: 0;
   margin-bottom: 0.8em;
-  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+
 header .logo {
   width: 100%;
   padding-top: 1em;
@@ -134,7 +137,6 @@ header .localisation i {
 
 header .headerText {
   background-color: rgb(246, 246, 246);
-  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -161,6 +163,7 @@ header .headerText p {
   margin-bottom: 1.4em;
 }
 header .headerText button {
+  box-shadow: 0px 2px 5px rgb(133, 132, 132);
   background: linear-gradient(#ff79da, #9356dc);
   color: white;
   border: 0;
@@ -169,10 +172,15 @@ header .headerText button {
   padding: 8px 6% 10px;
   border-radius: 20px;
   font-size: 12px;
+  transition: all 1s;
 }
 
+.headerText button:hover {
+  background: linear-gradient(#fca1e2, #b08bde);
+  box-shadow: 0px 3px 2px rgb(133, 132, 132);
+ }
+
 .tutoriel {
-  display: flex;
   flex-direction: column;
   
 }
@@ -185,15 +193,13 @@ header .headerText button {
   height: 5%;
 }
 
-.tutorielFlex {
-  display: flex;
+.tutorielFlex { 
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .tutorielFlex div {
-  display: flex;
   justify-content: start;
   align-items: center;
   margin-left: 0.5em;
@@ -244,24 +250,24 @@ header .headerText button {
 .selection {
   background-color: rgb(237, 236, 236);
   margin-top: 1.2em;
-  display: flex;
   flex-direction: column;
-  padding-top: 1.6em;
-  padding-bottom: 2.4em;
-}
+  padding: 1.6em 0 2.4em 0;
+
+ }
+
 .selection h2 {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  margin-left: 4%;
-  margin-bottom: 1em;
-}
+  margin: 0 0 1em 4%;
+ }
+ 
 .selection .restaurantsFlex {
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .restaurantsFlex .resto {
+  position: relative;
   border-radius: 10px;
   background-color: white;
   margin-bottom: 3.5%;
@@ -271,13 +277,22 @@ header .headerText button {
   box-shadow: 1px 1px 3px grey;
 }
 
+.restaurantsFlex .resto p {
+  border-radius: 2px;
+  font-size: 10px;
+  position: absolute;
+  background-color: #99E2D0;
+  color: #1c846a;
+  padding: 0.3em;
+  right: 1em;
+}
+
 #restoQuatre {
   margin-bottom: 0;
 }
 
 .restaurantsFlex .resto a {
   height: 100%;
-  display: flex;
   flex-direction: column;
 }
 
@@ -291,47 +306,41 @@ header .headerText button {
 
 .restaurantsFlex .description {
   box-sizing: border-box;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;  
   height: 40%;
   max-height: 60px;
-  padding-top: 0.3em;
-  padding-bottom: 0.2em;
-  padding-left: 0.8em;
+  padding: 0.3em 0 0.2em 0.8em;
+}
+
+.restaurantsFlex div h3, .restaurantsFlex div h4, .nom, .localisation {
+  margin: 0;
+  padding: 0;
 }
 
 .restaurantsFlex div h3 {
   color: black; /* La première case n'avait plus de texte sans*/
   font-weight: 600;
-  margin: 0;
-  padding: 0;
   font-size: 13px;
-}
+ }
+
 .restaurantsFlex div h4 {
   color: rgb(75, 75, 75); /* La première case n'avait plus de texte sans*/
   font-weight: 100;
   font-size: 13px;
-  margin: 0;
-  padding: 0;
-}
+ }
 
 .resto .nom {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
+ }
+
 .resto .localisation {
-  
   box-sizing: border-box;
-  margin: 0;
   margin-top: 3px;
-  padding: 0;
-}
+ }
 
 .restaurantsFlex .contI {
-  display: flex;
   height: 100%;
   align-items: center;
   margin: auto;
@@ -349,7 +358,6 @@ header .headerText button {
   
 }
 .restaurantsFlex .contI i:hover {
-  
   animation: heartAnim 1s linear 0s 1 normal forwards;
   /* ! Se fait facilement et mieux en JS !*/
 }
@@ -359,7 +367,7 @@ header .headerText button {
     color: blue;
   }
   50% {
-    color: rgb(87, 17, 17);
+    color: rgb(87, 17, 17);  
   }
   100% {
     color: #9356dc;
@@ -367,13 +375,12 @@ header .headerText button {
 }
 
 footer {
-  padding-top: 0.8em;
-  padding-bottom: 1.2em;
-  display: flex;
   flex-direction: column;
   color: rgb(255, 255, 255);
   background-color: rgb(44, 44, 44);
+  padding-bottom: 1em;
 }
+
 footer h2,
 footer li {
   margin: 0;
@@ -382,21 +389,21 @@ footer li {
 }
 
 footer h2 {
+  margin-top: 1.4em;
+  margin-bottom: 1em;
   font-weight: 100;
   font-family: 'Shrikhand', cursive;
 }
 
-
 footer ul {
   margin: 0;
-  margin-top: 0.3em;
   padding: 0;
   height: 90%;
 }
 
 footer li {
   font-size: 12px;
-  margin-top: 3px;
+  margin-top: 0.4em;
 }
 
 footer i {
@@ -405,6 +412,10 @@ footer i {
 
 #liAdjust {
   margin-right: 1em;
+}
+
+#iIncorrect {
+  margin-right: 0.6em;
 }
 
 @media (min-width: 770px) and (max-width: 991px)  {
@@ -483,11 +494,15 @@ header .headerText button {
   position: relative;
   top: -1.5em;
   right: 0;
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   margin: 0;
   margin-top: 0;
-  padding-top: 0.3em;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
   
 .tutorielFlex div .cercles p {
@@ -574,180 +589,173 @@ footer li {
   margin: 0;
 }
   
-footer li a {
+footer li a, footer i  {
   color: black;
 }
 
 footer i {
-color: black;
-margin-right: 0.43em;
-}
+  margin-right: 0.43em;
+ }
 
-#liAdjust {
-margin-right: 0.6em;
-}
-
-
+#iIncorrect {
+  margin-right: 0.6em;
+ }
 
 }
 
 @media  (min-width: 991px) {
   
-  header {
-      margin-bottom: 1%;
-   }
+header {
+  margin-bottom: 1%;
+ }
       
-  header .logo img {
-    width: 33%;
-    max-width: 350px;
-    max-height: 70px;
-  }
+header .logo img {
+  width: 33%;
+  max-width: 350px;
+  max-height: 70px;
+ }
 
-  header .localisation {
-      font-size: 16px;
-   }
+header .localisation {
+  font-size: 16px;
+ }
   
-  header .localisation i {
-      margin-right: 0.8em;
-      font-size: 22px;
-   }
+header .localisation i {
+  margin-right: 0.8em;
+  font-size: 22px;
+ }
       
-  header .headerText {
-      justify-content: space-evenly;
-   }
+header .headerText {
+  justify-content: space-evenly;
+ }
   
-  header .headerText h1 {
-      padding: 0;
-      font-size: 20px;
-   }
+header .headerText h1 {
+  padding: 0;
+  font-size: 20px;
+ }
   
-  header .headerText p {  
-      font-size: 17px;
-   }
+header .headerText p {  
+  font-size: 17px;
+ }
   
-  header .headerText button {
-      font-size: 16px;
-   }
+header .headerText button {
+  font-size: 16px;
+ }
       
-  .tutoriel h2 {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 2em;
-      font-size: 20px;
-   }
+.tutoriel h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  font-size: 20px;
+ }
   
-  .tutorielFlex {
-      flex-direction: row;
-   }
+.tutorielFlex {
+  flex-direction: row;
+ }
       
-  .tutorielFlex div {
-      flex-direction: column;
-      align-items: center;
-      margin-left: 0%;
-      width: 30%;
-      padding-bottom: 1em;
-   }
+.tutorielFlex div {
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0%;
+  width: 30%;
+  padding-bottom: 1em;
+ }
   
-  .tutorielFlex div .cercles {
-      box-sizing: border-box;
-      top: -1.5em;
-      right: 0;
-      width: 2em;
-      margin: 0;
-      margin-bottom: 1em;
-      height: 2em;
+.tutorielFlex div .cercles {
+  box-sizing: border-box;
+  top: -1.5em;
+  right: 0;
+  width: 2em;
+  margin: 0;
+  margin-bottom: 1em;
+  height: 2em;    
+ }
       
-   }
+.tutorielFlex div .cercles p {
+  font-size: 16px;
+ }
       
-  .tutorielFlex div .cercles p {
-      font-size: 16px;
-   }
-      
-  .tutorielFlex div h3 {
-      font-size: 22px;
-      margin: 0;
-      padding: 0;
-   }
+.tutorielFlex div h3 {
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+ }
   
-  .tutorielFlex div i {
-      margin: 0;
-      font-size: 35px;
-      margin-bottom: 1em;
-   }
+.tutorielFlex div i {
+  margin: 0;
+  font-size: 35px;
+  margin-bottom: 1em;
+ }
       
-  .selection {
-      margin-top: 3em;
-      padding-top: 1.6em;
-      padding-bottom: 4em;
-   }
+.selection {
+  margin-top: 3em;
+  padding-top: 1.6em;
+  padding-bottom: 4em;
+ }
   
-   .selection h2 {
-      font-size: 22px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 1.2em;
-   }
+.selection h2 {
+  font-size: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.2em;
+ }
   
-  .selection .restaurantsFlex {
-      flex-direction: row;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-   }
+.selection .restaurantsFlex {
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+ }
    
-   .restaurantsFlex .resto {
-       width: 29%;
-       height: auto;
-       aspect-ratio: 1/1;
-    }
-   .restaurantsFlex .resto .description {
-    height: 30%;
-    max-height: 150px;
-    }
-  .restaurantsFlex .resto a img {
-      height: 85%;
-   }
-      
-  .restaurantsFlex div p {
-      font-size: 12px;
-   }
-  
-  .restaurantsFlex .contI i {
-      font-size: 20px;
-   }
-  
-  footer { 
-      padding-top: 1.2em;
-      padding-bottom: 3em;
-      color: white;
-   }
-          
-  footer h2 {
-      margin: 0% auto 0;
-      font-size: 28px;
-   }
-          
-  footer ul {
-      display: flex;
-      margin-top: 1.6em;
-      justify-content: space-evenly;
-   }
-          
-  footer li {
-      height: fit-content;
-      padding: 2%;
-      background-color: white;
-      border-radius: 15px;
-      font-size: 16px;
-      margin: 0;
-   }
+.restaurantsFlex .resto {
+  width: 29%;
+  height: auto;
+  aspect-ratio: 1/1;
+ }
    
-   footer i {
-     color: black;
-   }
+.restaurantsFlex .resto .description {
+  height: 30%;
+  max-height: 150px;
+ }
 
-  footer li a {
-      color: black;
-   }
+.restaurantsFlex .resto a img {
+  height: 85%;
+ }
+      
+.restaurantsFlex div p {
+  font-size: 12px;
+ }
+  
+.restaurantsFlex .contI i {
+  font-size: 20px;
+ }
+  
+footer { 
+  padding-top: 1.2em;
+  padding-bottom: 3em;
+  color: white;
+ }
+          
+footer h2 {
+  margin: 0% auto 0;
+  font-size: 28px;
+ }
+          
+footer ul {
+  display: flex;
+  margin-top: 1.6em;
+  justify-content: space-evenly;
+ }
+          
+footer li {
+  padding: 2%;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 16px;
+  margin: 0;
+ }
+   
+footer i, footer li a {
+  color: black;
+ }
 
 }

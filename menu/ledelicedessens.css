@@ -4,626 +4,633 @@
    /* Mettre prix et case dans la même div */
    /* La taille du prix change avec l'animation car la taille n'est pas définie, contrairement aux intitulés et plats */
    body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
- }
-
- ul {
-    list-style: none;
-    padding: 0;
- }
-
- a {
-    color: white;
-    text-decoration: none;
- }
-
-h1, h2, .plats {
-    margin-left: 5%;
- }
-
- header, .logoFleche, main header, .entrees, .entreesFlex, .platsPrincipauxFlex, .dessertsFlex, .plats, .platsText, .prixIcone, .plats .prix, .caseCochee, footer {
-    display: flex;
- }
-
-header, .entrees, .entreesFlex, .platsPrincipauxFlex, .dessertsFlex, .platsText, .prix, footer {
-    flex-direction: column;
- }
-
-header, header .logoFleche, .caseCochee {
-    justify-content: center;
-    align-items: center;
- }
-
-
-main header, .plats, .platsText {
-    justify-content: space-between;
- }
-
-header .logoFleche, header .imageBG, header .imageBG img, main header {
-    width: 100%;
- }
-
-.logoFleche img, .imageBG img {
-    height: auto;
- }
-
-h3, h4, .plats .prix p{
-    margin: 0;
-    padding: 0;
- }
-
-.accompagnements, .prix p {
-    font-size: 10px;
- }
-
- h2, .plats .intitules {
-    font-size: 11px;
- }
-
- .caseCochee .check_icons, .commander {
-    font-size: 12px;   
- }
-    
- .plats .intitules, .prix {
-    font-weight: 600;
- }
-
-main, main header, .contI {
-    border-radius: 35px 35px 0 0;
-    background-color: rgb(237, 236, 236);
- }
-
-main, main header {
-   border-radius: 35px 35px 0 0;
- }
-
-.platsText, .plats .intitules, .plats .accompagnements {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
- }
-
-footer h2, .commander, .contI {
-   border: 0;
- }
-
-header {
-   background-color: white;
-   margin: 0;
-  }
-
-header .logoFleche {
-   position: relative;
-   padding: 1em 0 0.5em 0;
- }
-
-header .logoFleche img {
-    width: 45%;
-    max-width: 300px;
-    max-height: 35px;
-    object-fit: contain;
-}
-
-header .logoFleche i {
-   position: absolute;
-   left: 1em;
-   font-size: 14px;
- }
-
-header .imageBG {
-   margin-top: 0;
-   height: 80%;
- }
-
-header .imageBG img {
-   object-fit: cover;
- }
-
-main {
-    padding: 2em 0 4em 0;
-    margin-top: -17%;
-    position: relative;
- }
-
-main header {
-    flex-direction: row;
-    align-items: center;
-    padding: 0 0 1em 0;
-    max-width: 560px;
- }
-
-main header h1 {
-    font-family: 'Shrikhand', cursive;
-    margin: 0 0 0 5%;
-    padding: 0;
-    font-size: 18px;
- }
-
-.contI {
-    margin-right: 5%;
- }
-
-.restaurantsFlex .contI i {
-    margin-top: 70%;
-    font-size: 20px;
- }
-
-i {
-    transition: all 0.5s ease-in; /*! Ne marche pas juste au dessus !*/
- }
-
-i:hover {
-    color: #9356dc;
-    font-size: 19px;
- }
-
-.entrees, .platsPrincipaux, .desserts {
-    margin-bottom: 1em;
- }
-
-.desserts {
-    margin-bottom: 0;
- }
-
-h2 {
-    font-weight: 200;
-    width: 30px;
-    color: rgb(63, 63, 63);
-    border-bottom: 2px solid green;
- }
-
-.entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
-    align-items: flex-start;
- }
-
-.plats { 
-    position: relative;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    height: 40px;
-    padding: 0.1em 0 0.1em 0;
-    margin-bottom: 0.6em;
-    background-color: white;
-    overflow: hidden;
-    animation: itemAppear 1s;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    transform: scale(0);
- }
-
-.platsPrincipaux .plats {
-    animation-delay: 1s;
- }
-
-.desserts .plats {
-    animation-delay: 2s;
- }
-
-@keyframes itemAppear { 
-0% {transform: scale(0);}
-100% {transform: scale(1);}
-}
-
-#platFinal {
-    margin-bottom: 0;
- }
-
-.platsText {
-    padding: 6px;
- }
-
-.plats .intitules{
-    font-size: 11px;
- }
-
-.accompagnements{
-    font-weight: 300;
-    color: rgb(91, 89, 89);
- }
-
-.prixIcone {
-    margin-right: -40px;
-    transition: all 2s;
- }
-
-.prix {
-    width: 20px;
-    justify-content: flex-end;
-    padding: 0 0 6px 5px;
-    margin-right: 5px;
- }
-
-.plats .prix p{
-    padding-right: 8px;
-    font-size: 9px;
- }
-
-.caseCochee {
-    width: 40px;
-    border-radius: 0 10px 10px 0;
-    background-color: green;
- }
-
-.caseCochee .check_icons {
-    transition: all 3s;
- }
-
-.plats:hover .prixIcone { 
-    margin-right: 0;
- }
-
-.plats:hover .check_icons { 
-    transform: rotate(-360deg);
- }
-
-.commander {
-    display: block;
-    margin: 3em auto 0;
-    height: 32px;
-    background: linear-gradient(#ff79da, #9356dc);
-    color: white;
-    padding: 1em 3em 2.2em;
-    border-radius: 20px;
- }
-
-.commander:hover {
-    cursor: pointer;
- }
-
-footer {
-    margin-top: 0;
-    background-color: rgb(44, 44, 44);
- }
-
-footer h2 {
-    font-weight: 100;
-    font-family: 'Shrikhand', cursive;
- }
-
-footer h2, footer li {
-    color: white;
-    margin: 0;
-    font-size: 12px;
-    margin-left: 1.6em;
- }
-
-footer h2 {
-    margin-top: 1.4em;
-    margin-bottom: 1em;
- }
-
-footer ul {
-    margin-top: 0;
- }
-
-footer li {
-    font-size: 10px;
-    margin-top: 0.4em;
- }
-
-#first {
-    margin-top: 0;
- }
-
-footer i {
-    margin-right: 1em;
- }
-
-#iIncorrect {
-    margin-right: 0.6em;
- }
-
-@media (min-width: 770px) and (max-width: 991px) {
-
-footer ul {
-    display: flex;
- }
-
-footer ul, .entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
-    justify-content: space-evenly;
- }
-
-.plats, .prixIcone, main header  { 
-    flex-direction: column;
- }
-
-.prixIcone, .caseCochee {
-    width: 100%;
- }
-
-.plats .intitules, .plats .accompagnements{
-    margin: 0;
-    padding: 0;
- }
-
-h2, .caseCochee .check_icons {
-    font-size: 20px;
-}
-
-header .logoFleche img {
-    width: 30%;
-    object-fit: contain;
-    max-width: 350px;
-    max-height: 50px;
- }
-
-header .logoFleche i {
-    font-size: 28px;
- }
-
-.imageBG img {
-    max-height: 500px;
- }
-
-main {
-    padding-top: 2em;
-    margin-top: -10%;
-    padding-bottom: 3em;
- }
-
-main header {
-    align-items: center;
-    padding: 0;
-    margin: auto auto 1.6em;
- } 
-
-main header h1 {
-    font-size: 26px;
-    margin-left: 0%;
-    margin-bottom: 0em;
- }
-
-.contI {
-    height: 40px;
-    font-size: 30px;
-    margin: 0;
-    color: #ff79da;
- }
-
-i:hover {
-    font-size: 40px;
- }
-
-/*Menu*/
-
-main article {
-    margin-top: 0;
- }
-
-.entrees, .platsPrincipaux, .desserts {
-    margin-bottom: 2.2em;
- }
-
-h2 {
-    width: fit-content;
-    margin: auto auto 1.4em;
- }
-
-.entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
-    flex-direction: row;
- }
-
-.plats { 
-    width: 24%;
-    max-width: 200px;
-    height: 100px;
-    margin: auto 0 0 0;
- }
-
-.platsText {
-    margin-top: 0.5em;
-    padding: 2px;
-    text-align: center;
- }
-
-.prixIcone {
-    margin-bottom: -42px;
- }
-
-.caseCochee {
-    height: 40px;
- }
-
-.plats:hover .prixIcone { 
-    margin-bottom: 0;
- }
-
-.plats .prix {
-    margin: auto auto 4%;
-    padding: 0;
- }
-
-.commander {
-    margin-top: 0em;
-    height: 40px;
-    font-size: 16px;
- }
-
-/* Footer */
-
-footer {
-    padding-top: 2em;
-    padding-bottom: 2em;
- }
-
-footer h2 {
-    margin: 0% auto 0;
-    font-size: 24px;
- }
-
-footer ul {
-    margin-top: 1.6em;
- }
-
-footer li {
-    padding: 1.3em;
-    background-color: white;
-    border-radius: 15px;
-    font-size: 14px;
-    margin: 0;
- }
-
-footer li a, footer i {
-    color: black;
- }
-
-footer i {
-    margin-right: 1em;
- }
-}
-
-@media (min-width: 992px) {
-
-main header, main header h1, .prix {
-    padding: 0;
- }
-main header, .plats, .platsText, .prixIcone {
-    flex-direction: column;
- }
-
- .prixIcone, .caseCochee {
-    width: 100%; 
- }
-
-header .logoFleche i {
-    font-size: 40px;
- } 
-
-header .logoFleche img {
-    width: 30%;
-    max-width: 400px;
-    max-height: 70px;
- }
-
-header .imageBG img {
-    margin-left: 25%;
-    width: 50%;
-    max-height: 450px;
- }
-
-main {
-    padding: 2em auto 2.4em;
-    margin-top: -5%;
- }   
-
-main header {
-    margin: auto auto 1.6em;
- }
-  
-main header h1 {
-    margin: 0 0 0.5em 0;
-    font-size: 22px;
- }
-  
-.contI {
-    font-size: 35px;
-    margin: 0;
-    color: #ff79da;
- }
- 
-i:hover {
-    font-size: 50px;
- }
-
- /*Menu*/
- 
-.entrees, .platsPrincipaux, .desserts {
-    margin-bottom: 3em;
- }
- 
-h2 {
-    width: fit-content;
-    margin: auto auto 1.2em;
-    font-size: 18px;
- }
-   
-.entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
-    flex-direction: row;
-    justify-content: space-evenly;
- }
- 
-.plats { 
-    margin: 0;
-    width: 24%;
-    max-width: 280px;
-    height: 120px;
- }
-
-.platsText {
-    justify-content: flex-start;
-    margin-top: 0.5rem;
-    padding: 2px;
-    text-align: center;
- }
-
-.prixIcone {
-    margin-bottom: -62px;
- }
-
-.prix { 
-    margin: auto auto 5px;
- }
-
-.plats .prix p {
-    font-size: 12px;  
- } 
-
-.caseCochee {
-    height: 60px;
- }
-
-.caseCochee .check_icons {
-    font-size: 24px;
- }
-
-.plats:hover :nth-child(2) {
-    margin-bottom: 0;
- }
-
-.commander {
-    padding: 1em 2em 1em;
-    margin-top: 2em;
-    height: auto;
-    font-size: 16px;
- }
- 
- /* Footer */
- 
- footer { 
-    padding: 2em 0 3em 0;
-    color: white;
-    background-color: rgb(44, 44, 44);
- }
-       
-footer h2 {
-    margin: 0% auto 0;
-    font-size: 28px;
- }
-     
-footer h2 {
-    margin: 0% auto 0;
-    font-size: 26px;
- }
- 
-footer ul {
-    display: flex;
-    width: 100%;
-    margin-top: 1.6em;
-    justify-content: space-evenly;
- }
- 
-footer li {
-    padding: 1.2em;
-    background-color: white;
-    border-radius: 15px;
-    font-size: 16px;
-    margin: 0;
- }
-
-footer li a, footer i {
-    color: black;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
    }
- }
-
+  
+   ul {
+      list-style: none;
+      padding: 0;
+   }
+  
+   a {
+      color: white;
+      text-decoration: none;
+   }
+  
+  h1, h2, .plats {
+      margin-left: 5%;
+   }
+  
+   header, .logoFleche, main header, .entrees, .entreesFlex, .platsPrincipauxFlex, .dessertsFlex, .plats, .platsText, .prixIcone, .plats .prix, .caseCochee, footer {
+      display: flex;
+   }
+  
+  header, .entrees, .entreesFlex, .platsPrincipauxFlex, .dessertsFlex, .platsText, .prix, footer {
+      flex-direction: column;
+   }
+  
+  header, header .logoFleche, .caseCochee {
+      justify-content: center;
+      align-items: center;
+   }
+  
+  
+  main header, .plats, .platsText {
+      justify-content: space-between;
+   }
+  
+  header .logoFleche, header .imageBG, header .imageBG img, main header {
+      width: 100%;
+   }
+  
+  .logoFleche img, .imageBG img {
+      height: auto;
+   }
+  
+  h3, h4, .plats .prix p{
+      margin: 0;
+      padding: 0;
+   }
+  
+  .accompagnements, .prix p {
+      font-size: 10px;
+   }
+  
+   h2, .plats .intitules {
+      font-size: 11px;
+   }
+  
+   .caseCochee .check_icons, .commander {
+      font-size: 12px;   
+   }
+      
+   .plats .intitules, .prix {
+      font-weight: 600;
+   }
+  
+  main, main header, .contI {
+      border-radius: 35px 35px 0 0;
+      background-color: rgb(237, 236, 236);
+   }
+  
+  main, main header {
+     border-radius: 35px 35px 0 0;
+   }
+  
+  .platsText, .plats .intitules, .plats .accompagnements {
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+   }
+  
+  footer h2, .commander, .contI {
+     border: 0;
+   }
+  
+  header {
+     background-color: white;
+     margin: 0;
+    }
+  
+  header .logoFleche {
+     position: relative;
+     padding: 1em 0 0.5em 0;
+   }
+  
+  header .logoFleche img {
+      width: 45%;
+      max-width: 300px;
+      max-height: 35px;
+      object-fit: contain;
+  }
+  
+  header .logoFleche a {
+     position: absolute;
+     left: 4%;
+     font-size: 14px;
+   }
+  
+  header .logoFleche i {
+     color: black;
+     font-size: 14px;
+   }
+  
+  header .imageBG {
+     overflow-y: hidden;
+     margin-top: 0;
+   }
+  
+  header .imageBG img {
+     margin-top: -0%;
+     width: 100%;
+     object-fit: cover;
+     max-height: 400px;
+   }
+  
+  main {
+      padding: 2em 0 4em 0;
+      margin-top: -15%;
+      position: relative;
+   }
+  
+  main header {
+      flex-direction: row;
+      align-items: center;
+      padding: 0 0 1em 0;
+      max-width: 560px;
+   }
+  
+  main header h1 {
+      font-family: 'Shrikhand', cursive;
+      margin: 0 0 0 5%;
+      padding: 0;
+      font-size: 18px;
+   }
+  
+  .contI {
+      margin-right: 5%;
+   }
+  
+  .restaurantsFlex .contI #coeur {
+      margin-top: 70%;
+      font-size: 20px;
+   }
+  
+  #coeur {
+      transition: all 0.5s ease-in; /*! Ne marche pas juste au dessus !*/
+   }
+  
+   #coeur:hover {
+      color: #9356dc;
+      font-size: 19px;
+   }
+  
+  .entrees, .platsPrincipaux, .desserts {
+      margin-bottom: 1em;
+   }
+  
+  .desserts {
+      margin-bottom: 0;
+   }
+  
+  h2 {
+      font-weight: 200;
+      width: 30px;
+      color: rgb(63, 63, 63);
+      border-bottom: 2px solid green;
+   }
+  
+  .entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
+      align-items: flex-start;
+   }
+  
+  .plats { 
+      position: relative;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      height: 40px;
+      padding: 0.1em 0 0.1em 0;
+      margin-bottom: 0.6em;
+      background-color: white;
+      overflow: hidden;
+      animation: itemAppear 1s;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      transform: scale(0);
+   }
+  
+  .platsPrincipaux .plats {
+      animation-delay: 1s;
+   }
+  
+  .desserts .plats {
+      animation-delay: 2s;
+   }
+  
+  @keyframes itemAppear { 
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+  }
+  
+  #platFinal {
+      margin-bottom: 0;
+   }
+  
+  .platsText {
+      padding: 6px;
+   }
+  
+  .plats .intitules{
+      font-size: 11px;
+   }
+  
+  .accompagnements{
+      font-weight: 300;
+      color: rgb(91, 89, 89);
+   }
+  
+  .prixIcone {
+      margin-right: -40px;
+      transition: all 2s;
+   }
+  
+  .prix {
+      width: 20px;
+      justify-content: flex-end;
+      padding: 0 0 6px 5px;
+      margin-right: 5px;
+   }
+  
+  .plats .prix p{
+      padding-right: 8px;
+      font-size: 9px;
+   }
+  
+  .caseCochee {
+      width: 40px;
+      border-radius: 0 10px 10px 0;
+      background-color: green;
+   }
+  
+  .caseCochee .check_icons {
+      transition: all 3s;
+   }
+  
+  .plats:hover .prixIcone { 
+      margin-right: 0;
+   }
+  
+  .plats:hover .check_icons { 
+      transform: rotate(-360deg);
+   }
+  
+  .commander {
+     box-shadow: 0px 2px 5px rgb(133, 132, 132);
+     display: block;
+     margin: 3em auto 0;
+     height: 32px;
+     background: linear-gradient(#ff79da, #9356dc);
+     color: white;
+     padding: 1em 3em 2.2em;
+     border-radius: 20px;
+   }
+  
+  .commander:hover {
+     background: linear-gradient(#fca1e2, #b08bde);
+     box-shadow: 0px 3px 2px rgb(133, 132, 132);
+   }
+  
+  footer {
+     margin-top: 0;
+     background-color: rgb(44, 44, 44);
+   }
+  
+  footer h2 {
+      font-weight: 100;
+      font-family: 'Shrikhand', cursive;
+   }
+  
+  footer h2, footer li {
+      color: white;
+      margin: 0;
+      font-size: 12px;
+      margin-left: 1.6em;
+   }
+  
+  footer h2 {
+     margin: 1.4em 0 1em 1.6em;
+   }
+  
+  footer ul, #first {
+      margin-top: 0;
+   }
+  
+  footer li {
+      font-size: 10px;
+      margin-top: 0.4em;
+   }
+  
+  footer i {
+      margin-right: 1em;
+   }
+  
+  #iIncorrect {
+      margin-right: 0.6em;
+   }
+  
+  @media (min-width: 770px) and (max-width: 991px) {
+  
+  footer ul {
+      display: flex;
+   }
+  
+  footer ul, .entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
+      justify-content: space-evenly;
+   }
+  
+  .plats, .prixIcone, main header  { 
+      flex-direction: column;
+   }
+  
+  .prixIcone, .caseCochee {
+      width: 100%;
+   }
+  
+  .plats .intitules, .plats .accompagnements{
+      margin: 0;
+      padding: 0;
+   }
+  
+  h2, .caseCochee .check_icons {
+      font-size: 20px;
+  }
+  
+  header .logoFleche img {
+      width: 30%;
+      object-fit: contain;
+      max-width: 350px;
+      max-height: 50px;
+   }
+  
+  header .logoFleche i {
+      font-size: 28px;
+   }
+  
+  header .imageBG img {
+      margin-top: -15%;
+      max-height: 500px;
+   }
+  
+  main {
+     padding: 2em 0 3em 0;
+     margin-top: -10%;
+   }
+  
+  main header {
+      align-items: center;
+      padding: 0;
+      margin: auto auto 1.6em;
+   } 
+  
+  main header h1 {
+      font-size: 26px;
+      margin: 0;
+   }
+  
+  .contI {
+      height: 40px;
+      font-size: 30px;
+      margin: 0;
+      color: #ff79da;
+   }
+  
+  #coeur {
+     transition: all 0.5s ease-in; /*! Ne marche pas juste au dessus !*/
+   }
+  
+   #coeur:hover {
+     font-size: 40px;
+   }
+  /*Menu*/
+  
+  main article {
+      margin-top: 0;
+   }
+  
+  .entrees, .platsPrincipaux, .desserts {
+      margin-bottom: 2.2em;
+   }
+  
+  h2 {
+      width: fit-content;
+      margin: auto auto 1.4em;
+   }
+  
+  .entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
+      flex-direction: row;
+   }
+  
+  .plats { 
+      width: 24%;
+      max-width: 200px;
+      height: 100px;
+      margin: auto 0 0 0;
+   }
+  
+  .platsText {
+      margin-top: 0.5em;
+      padding: 2px;
+      text-align: center;
+   }
+  
+  .prixIcone {
+      margin-bottom: -42px;
+   }
+  
+  .caseCochee {
+      height: 40px;
+   }
+  
+  .plats:hover .prixIcone { 
+      margin-bottom: 0;
+   }
+  
+  .plats .prix {
+      margin: auto auto 4%;
+      padding: 0;
+   }
+  
+  .commander {
+     margin-top: 0em;
+     height: 40px;
+     font-size: 16px;
+   }
+  
+  /* Footer */
+  
+  footer {
+     padding: 2em 0 2em 0;
+   }
+  
+  footer h2 {
+      margin: 0% auto 0;
+      font-size: 24px;
+   }
+  
+  footer ul {
+      margin-top: 1.6em;
+   }
+  
+  footer li {
+      padding: 1.3em;
+      background-color: white;
+      border-radius: 15px;
+      font-size: 14px;
+      margin: 0;
+   }
+  
+  footer li a, footer i {
+      color: black;
+   }
+  
+  footer i {
+      margin-right: 1em;
+   }
+  }
+  
+  @media (min-width: 992px) {
+  
+  main header, main header h1, .prix {
+      padding: 0;
+   }
+  main header, .plats, .platsText, .prixIcone {
+      flex-direction: column;
+   }
+  
+   .prixIcone, .caseCochee {
+      width: 100%; 
+   }
+  
+  header .logoFleche i {
+      font-size: 40px;
+   } 
+  
+  header .logoFleche img {
+      width: 30%;
+      max-width: 400px;
+      max-height: 70px;
+   }
+  
+  header .imageBG img {
+      margin-left: 25%;
+      width: 50%;
+      max-height: 600px;
+   }
+  
+  main {
+      padding: 2em auto 2.4em;
+      margin-top: -5%;
+   }   
+  
+  main header {
+      margin: auto auto 1.6em;
+   }
+    
+  main header h1 {
+      margin: 0 0 0.5em 0;
+      font-size: 22px;
+   }
+    
+  .contI {
+      font-size: 35px;
+      margin: 0;
+      color: #ff79da;
+   }
+   
+  #coeur:hover {
+      font-size: 50px;
+   }
+  
+   /*Menu*/
+   
+  .entrees, .platsPrincipaux, .desserts {
+      margin-bottom: 3em;
+   }
+   
+  h2 {
+      width: fit-content;
+      margin: auto auto 1.2em;
+      font-size: 18px;
+   }
+     
+  .entreesFlex, .platsPrincipauxFlex, .dessertsFlex {
+      flex-direction: row;
+      justify-content: space-evenly;
+   }
+   
+  .plats { 
+      margin: 0;
+      width: 24%;
+      max-width: 280px;
+      height: 120px;
+   }
+  
+  .platsText {
+      justify-content: flex-start;
+      margin-top: 0.5rem;
+      padding: 2px;
+      text-align: center;
+   }
+  
+  .prixIcone {
+      margin-bottom: -62px;
+   }
+  
+  .prix { 
+      margin: auto auto 5px;
+   }
+  
+  .plats .prix p {
+      font-size: 12px;  
+   } 
+  
+  .caseCochee {
+      height: 60px;
+   }
+  
+  .caseCochee .check_icons {
+      font-size: 24px;
+   }
+  
+  .plats:hover :nth-child(2) {
+      margin-bottom: 0;
+   }
+  
+  .commander {
+      padding: 1em 2em 1em;
+      margin-top: 2em;
+      height: auto;
+      font-size: 16px;
+   }
+   
+   /* Footer */
+   
+   footer { 
+      padding: 2em 0 3em 0;
+      color: white;
+      background-color: rgb(44, 44, 44);
+   }
+         
+  footer h2 {
+      margin: 0% auto 0;
+      font-size: 28px;
+   }
+       
+  footer h2 {
+      margin: 0% auto 0;
+      font-size: 26px;
+   }
+   
+  footer ul {
+      display: flex;
+      width: 100%;
+      margin-top: 1.6em;
+      justify-content: space-evenly;
+   }
+   
+  footer li {
+      padding: 1.2em;
+      background-color: white;
+      border-radius: 15px;
+      font-size: 16px;
+      margin: 0;
+   }
+  
+  footer li a, footer i {
+      color: black;
+     }
+   }
+  
+  
