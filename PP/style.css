@@ -36,7 +36,6 @@ a {
 
 
 .loader {
-
   position: fixed;
   animation: backAnim 3.7s ease-out 0s 1 normal none;
   width: 100vw;
@@ -277,38 +276,17 @@ header .headerText button {
 }
 
 .restaurantsFlex .resto a {
-  /* Background ne fonctionne pas sur les liens*/
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .restaurantsFlex .resto a img {
   object-fit: cover;
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   border-radius: 10px 10px 0 0;
-}
-
-.restaurantsFlex div .background {
-  background-image: url("./img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 -40px;
-  width: 100%;
-  border-radius: 10px 10px 0 0;
-}
-.restaurantsFlex div .bgOne {
-  background-image: url("./img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  background-position: 0 -0px;
-}
-.restaurantsFlex div .bgTwo {
-  background-image: url("./img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
-  background-position: -0px -120px;
-}
-.restaurantsFlex div .bgThree {
-  background-image: url("./img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-  background-position: -0px -28px;
 }
 
 .restaurantsFlex .description {
@@ -316,14 +294,12 @@ header .headerText button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
-  
+  flex-wrap: wrap;  
   height: 40%;
   max-height: 60px;
   padding-top: 0.3em;
   padding-bottom: 0.2em;
   padding-left: 0.8em;
-  
 }
 
 .restaurantsFlex div h3 {
@@ -386,7 +362,7 @@ header .headerText button {
     color: rgb(87, 17, 17);
   }
   100% {
-    color: linear;
+    color: #9356dc;
   }
 }
 
@@ -519,7 +495,7 @@ header .headerText button {
 }
   
 .tutorielFlex div h3 {
-  font-size: 22px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
 }
